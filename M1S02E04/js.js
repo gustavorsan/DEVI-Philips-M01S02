@@ -1,16 +1,17 @@
-let idade = Number(window.prompt("Insira sua idade"));
+/**Utilizando estrutura de repetição, some os números digitados através do prompt enquanto o número for diferente de -1, 
+ * quando digitado -1 pare de exibir o prompt e exiba através de um alert o resultado da soma dos números digitados.
 
-let msg = "Jovens";
+Realize o commit do exercício resolvido. */
 
-while(isNaN(idade) || idade < 0){
-  idade = Number(window.prompt("Por favor ,insira uma idade valida "));
+let soma = 0;
+while(true){
+  let num = parseInt(prompt('Digite um numero :'));
+  if(num === -1 ) break;
+  if(isNaN(num)){
+    alert('Número inválido!!')
+    continue;
+  }
+  soma += num;
 }
 
-if(Math.floor(idade) > 16 && Math.floor(idade) < 64){
-  msg = "Adultos";
-}else  if(Math.floor(idade) > 64){
-  msg= "Idosos"
-}
-
-alert(msg);
-
+alert(soma);
