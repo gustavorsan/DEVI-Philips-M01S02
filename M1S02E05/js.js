@@ -1,16 +1,23 @@
-let idade = Number(window.prompt("Insira sua idade"));
+/*Exiba um prompt solicitando a entrada de um número para saber quantos pares e impares existem de 0 até o número digitado.
+Calcule o número de pares e impares e exiba o resultado utilizando um alert.
 
-let msg = "Jovens";
+Realize o commit do exercício resolvido.*/
 
-while(isNaN(idade) || idade < 0){
-  idade = Number(window.prompt("Por favor ,insira uma idade valida "));
+let num = parseInt(prompt('Digite um número :'));
+
+let impares = 0;
+let pares = 0;
+
+while(isNaN(num) || num < 0){
+  num = parseInt(prompt('Digite um número válido:'));
 }
 
-if(Math.floor(idade) > 16 && Math.floor(idade) < 64){
-  msg = "Adultos";
-}else  if(Math.floor(idade) > 64){
-  msg= "Idosos"
+for(let i = 0; i <= num; i++){
+  if(i % 2 === 0){
+    pares++
+  }else{
+    impares++;
+  }
 }
 
-alert(msg);
-
+alert(`Quantidade de pares: ${pares} \n Quantidade  de impares: ${impares}`);
