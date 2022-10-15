@@ -1,4 +1,23 @@
-/*Ao entrar na página, seu script deve realizar 2 prompts ao usuário: um solicitando um “valor inicial”, e outro um valor para a “raíz”. Após o usuário inserir esses valores, o seu script deve calcular os 10 primeiros valores da sequência e exibir na tela.
-Relembrando: P.A. (Progressão Aritmética) é uma sequência numérica em que cada termo, a partir do segundo, é igual à soma do termo anterior com a raiz. Exemplo: Valor inicial = 1; raiz = 3; P.A. = 1, 4, 7, 10, 13, 16, 19, 22, 25, 28.
+let numInicial = parseInt(prompt('Digite um numero :'));
+let mensagem = 'P.A. =';
+while(isNaN(numInicial)){
+  numInicial = parseInt(prompt('Digite um numero válido:'));
+}
+let raiz = parseInt(prompt('Digite a raiz :'));
+while(isNaN(raiz)){
+  raiz = parseInt(prompt('Digite uma raiz válida:'));
+}
 
-Realize o commit do exercício resolvido.*/
+for(let i = 0; i < 10; i++){
+  if(i === 0 ){
+    mensagem += ` ${numInicial},`
+  }else if(i < 9){
+    mensagem += ` ${numInicial+raiz},`
+    numInicial = numInicial+raiz;
+  }else{
+    mensagem += ` ${numInicial+raiz}.`
+  }
+  
+}
+
+alert(mensagem);
